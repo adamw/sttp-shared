@@ -23,8 +23,8 @@ trait WebSocket[F[_]] {
     * happen.
     *
     * However, not all implementations expose the close frame, and web sockets might also get closed without the proper
-    * close frame exchange. In such cases, as well as when invoking `receive`/`send` after receiving a close frame, this
-    * effect will fail with the [[WebSocketClosed]] exception.
+    * close frame exchange. In such cases, as well as when invoking `receive` /`send` after receiving a close frame,
+    * this effect will fail with the [[WebSocketClosed]] exception.
     *
     * *Should be only called sequentially!* (from a single thread/fiber). Because web socket frames might be fragmented,
     * calling this method concurrently might result in threads/fibers receiving fragments of the same frame.
